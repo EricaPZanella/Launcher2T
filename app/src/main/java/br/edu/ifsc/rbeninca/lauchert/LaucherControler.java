@@ -57,6 +57,7 @@ public class LaucherControler {
                         appInfoArrayListResult.add(appinfo);
                     }
                 }
+
         }
         return  appInfoArrayListResult;
     }
