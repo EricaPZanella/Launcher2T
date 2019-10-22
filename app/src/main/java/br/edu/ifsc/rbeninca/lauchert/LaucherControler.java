@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 public class LaucherControler {
     Context mContext ;
     ArrayList<AppInfo>  appInfoArrayList ;
+    ArrayList<AppInfo>  appInfoArrayListResult ;
     List<ApplicationInfo> applicationInfoList;
 
     LaucherControler ( Context  context){
@@ -27,6 +28,7 @@ public class LaucherControler {
 
     public ArrayList<AppInfo> loadAppInf(final String key){
         appInfoArrayList = new ArrayList<AppInfo>();
+        appInfoArrayListResult= new ArrayList<AppInfo>();
 
         // LoadApps using Intent Query and filter intent category Launcher.
         Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
@@ -46,8 +48,18 @@ public class LaucherControler {
         Collection<AppInfo>  appInfos = appInfoArrayList.stream().filter((d) -> d.appname.toLowerCase().contains (key.toLowerCase().trim())).collect(Collectors.toList());
         appInfoArrayList = new ArrayList<>(appInfos);
         Collections.sort(appInfoArrayList, comparator);
+        //impondo ordem fixa a aplicativos.
+        String [] listaPacoteApp={"com.google.android.youtube",}; //Array com pacotes 
+        int i=0;
+        for ( AppInfo appinfo:appInfoArrayList) {
+                for ( i=0; i<listaPacoteApp.length ; i++) {
+                    if (appinfo.pname.equals( listaPacoteApp[i]) ) {
+                        appInfoArrayListResult.add(appinfo);
+                    }
+                }
 
-        return  appInfoArrayList;
+        }
+        return  appInfoArrayListResult;
     }
 
 }
