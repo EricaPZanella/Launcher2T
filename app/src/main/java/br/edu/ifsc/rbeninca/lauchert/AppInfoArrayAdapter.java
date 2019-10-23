@@ -65,12 +65,6 @@ public class AppInfoArrayAdapter extends RecyclerView.Adapter<AppInfoArrayAdapte
 
     }
 
-
-
-
-
-
-
 };
 
 //    public AppInfoArrayAdapter( Context context, int resource, ArrayList<AppInfo> objects) {

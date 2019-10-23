@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recycleView);
-        editTextPesquisa = findViewById(R.id.editTextKeyWord);
+        //editTextPesquisa = findViewById(R.id.editTextKeyWord);
 
 
 
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 }
         ));
         //configurando o textwacher
-            editTextPesquisa.addTextChangedListener(this.textWatcherPesquisa);
+            //editTextPesquisa.addTextChangedListener(this.textWatcherPesquisa);
         }
 
     public void refreshList(String key ){
