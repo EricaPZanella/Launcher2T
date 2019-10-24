@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     AppInfoArrayAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,10 +87,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
     //Implementação do analisador texto para o campo de pesquisa
     private TextWatcher textWatcherPesquisa =new TextWatcher() {
         @Override
@@ -107,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
         public void afterTextChanged(Editable editable) {
 
         }
+
+
     };
 
 
