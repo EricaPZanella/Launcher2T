@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">LaucherT</string>
+    <string name="voltar">VOLTAR</string>
+    <string name="avancar">AVANÇAR</string>
+    <string name="telainicial">PAG. INICIAL</string>
 </resources>

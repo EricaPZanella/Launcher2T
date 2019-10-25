@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
-
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_uefa"
-            android:checked="true"
-            android:icon="@drawable/ic_setaesquerda"
-            android:title="Voltar" />
-        <item
-            android:id="@+id/nav_libertadores"
-            android:icon="@drawable/ic_telainicial"
-            android:title="Página inicial" />
-        <item
-            android:id="@+id/nav_afc"
-            android:icon="@drawable/ic_setadireita"
-            android:title="Avançar" />
-    </group>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_setaesquerda"
+        android:checked="true"
+        android:icon="@drawable/ic_setaesquerda"
+        android:title="@string/voltar" />
+    <item
+        android:id="@+id/nav_telainicial"
+        android:checked="true"
+        android:icon="@drawable/ic_telainicial"
+        android:title="@string/telainicial" />
+    <item
+        android:id="@+id/nav_setadireita"
+        android:checked="true"
+        android:icon="@drawable/ic_setadireita"
+        android:title="@string/avancar" />
 </menu>
