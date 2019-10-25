@@ -1,5 +1,6 @@
 package br.edu.ifsc.rbeninca.lauchert;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,11 +12,14 @@ import android.os.Bundle;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
@@ -24,8 +28,14 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextPesquisa;
     ArrayList<AppInfo> aplicativosList;
     AppInfoArrayAdapter mAdapter;
+    BottomNavigationView bottomNavigationView;
     private RecyclerView.LayoutManager layoutManager;
-
+    String [] listaPacoteAppTela1 = {"com.google.android.dialer","com.google.android.apps.messaging","com.android.contacts", "com.google.android.deskclock", "com.android.calculator2", "com.google.android.music", "com.google.android.apps.maps"};
+    String [] listaRenaimeTela1 = {"Chamadas","Mensagens","Contatos", "Despertador", "Câmera", "Reprodutor de música"};
+    String [] listaPacoteAppTela2 = {"com.google.android.apps.maps", "com.google.android.youtube", "com.google.android.apps.photos", "com.google.android.videos", "com.android.settings"};
+    String [] listaRenaimeTela2 ={"Mapas - GPS", "Youtube - Vídeos", "Galeria fotos", "Reprodutor de vídeos","Configurações do celular"};
+    String [] listaPacoteAppTela3 ={"com.android.chrome"};
+    String [] listaRenaimeTela3 ={"Internet"};
 
 
     @Override
@@ -36,11 +46,42 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycleView);
         //editTextPesquisa = findViewById(R.id.editTextKeyWord);
 
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setOnNavigationItemReselectedListener(
+                new BottomNavigationView.OnNavigationItemReselectedListener() {
+                    @Override
+                    public void onNavigationItemReselected(@NonNull MenuItem menuItem) {
+
+                        switch (menuItem.getItemId()){
+                            case R.id.nav_setaesquerda:{
+
+
+
+                            }
+                            case R.id.nav_telainicial:{
+
+
+                                
+                            }
+                            case R.id.nav_setadireita:{
+
+
+                                
+                            }
+                        }
+
+                    }
+
+                    private void refreshList(String s) {
+                    }
+                });
 
 
         //Inicialização do controlador do Laucher
         laucherControler=new  LaucherControler(getApplicationContext());
         this.refreshList("");
+
 
         //configurando recycler view.
         recyclerView.setHasFixedSize(true);
@@ -77,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
             //editTextPesquisa.addTextChangedListener(this.textWatcherPesquisa);
         }
 
+
+
     public void refreshList(String key ){
         aplicativosList=laucherControler.loadAppInf(key);
         mAdapter  = new AppInfoArrayAdapter(getApplicationContext(),
@@ -108,14 +151,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     };
-
-
-
-
-
-
-
-
 
 
 }

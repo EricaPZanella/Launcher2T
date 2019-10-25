@@ -2,5 +2,8 @@
     <string name="app_name">LaucherT</string>
     <string name="voltar">VOLTAR</string>
     <string name="avancar">AVANÇAR</string>
-    <string name="telainicial">PAG. INICIAL</string>
+    <string name="telainicial">PÁGINA INICIAL</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

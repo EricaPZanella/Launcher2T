@@ -34,11 +34,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        app:itemBackground="@color/design_default_color_primary"
+        app:itemBackground="@color/colorPrimary"
         app:itemIconSize="30dp"
-        app:itemIconTint="@color/colorAccent"
-        app:itemTextColor="@color/colorAccent"
+        app:itemIconTint="@android:color/holo_orange_light"
+        app:itemTextAppearanceActive="?attr/toolbarNavigationButtonStyle"
+        app:itemTextColor="@android:color/holo_orange_light"
         app:layout_editor_absoluteX="30dp"
-        app:menu="@menu/activity_main_bottom_actions" />
+        app:menu="@menu/activity_main_bottom_actions"
+        tools:itemTextAppearanceActive="@android:style/TextAppearance.DeviceDefault.Widget.IconMenu.Item" />
 
 </RelativeLayout>

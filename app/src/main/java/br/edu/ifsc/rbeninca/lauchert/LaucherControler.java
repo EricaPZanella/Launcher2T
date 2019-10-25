@@ -21,11 +21,16 @@ public class LaucherControler {
     ArrayList<AppInfo>  appInfoArrayList ;
     ArrayList<AppInfo>  appInfoArrayListResult ;
     List<ApplicationInfo> applicationInfoList;
+    String [] listaPacoteAppTela;
+    String [] listaRenaimeTela;
 
     LaucherControler ( Context  context){
         mContext = context;
         applicationInfoList= mContext.getPackageManager().getInstalledApplications(0);
         appInfoArrayList = new ArrayList<AppInfo>();
+        //listaPacoteAppTela = context;
+        //listaRenaimeTela = nomes;
+
     }
 
 
@@ -55,20 +60,20 @@ public class LaucherControler {
 
 
         //impondo ordem fixa a aplicativos.
-        //String [] listaPacoteApp={"com.google.android.youtube",}; //Array com pacotes
-        String [] listaPacoteApp={"com.google.android.dialer","com.google.android.apps.messaging","com.android.contacts", "com.google.android.deskclock", "com.android.calculator2",
+        //String [] listaPacoteAppTela={"com.google.android.youtube",}; //Array com pacotes
+        String [] listaPacoteAppTela={"com.google.android.dialer","com.google.android.apps.messaging","com.android.contacts", "com.google.android.deskclock", "com.android.calculator2",
                 "com.google.android.music", "com.google.android.apps.maps", "com.google.android.youtube", "com.google.android.apps.photos", "com.google.android.videos",
                 "com.android.settings", "com.android.chrome"};
 
-        String [] listaRenaime={"Chamadas","Mensagens","Contatos", "Despertador", "Câmera",
+        String [] listaRenaimeTela={"Chamadas","Mensagens","Contatos", "Despertador", "Câmera",
                 "Reprodutor de música", "Mapas - GPS", "Youtube - Vídeos", "Galeria fotos", "Reprodutor de vídeos",
                 "Configurações do celular", "Internet"};
 
         int i=0;
-        for ( i=0; i<listaPacoteApp.length ; i++){
+        for ( i=0; i<listaPacoteAppTela.length ; i++){
             for ( AppInfo appinfo:appInfoArrayList) {
-                    if (appinfo.pname.equals( listaPacoteApp[i]) ) {
-                        appinfo.appname = listaRenaime[i];
+                    if (appinfo.pname.equals( listaRenaimeTela[i]) ) {
+                        appinfo.appname = listaRenaimeTela[i];
 
                         String NovoCaminho = "@drawable'\'mensagem.bmp";
                         //appinfo.appname.equals("Chamadas");
